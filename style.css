@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+.box {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+
+.sol {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-image: url('img/sol.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 0 3em yellow;
+}
+
+.terra, .lua {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+
+.terra {
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbita 36.5s linear infinite;
+}
+
+.lua {
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    animation: orbita 2.7s linear infinite;
+}
+
+.terra::before,
+.lua::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.terra::before {
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-image: url('img/terra.png');
+    background-size: cover;
+}
+
+.lua::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url('img/lua.png');
+    background-size: cover;
+}
+
+@keyframes orbita {
+    to {
+        transform: rotate(360deg);
+    }
+}
